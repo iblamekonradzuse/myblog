@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Terminal</title>
-    <link>/</link>
+    <link>//localhost:1313/</link>
     <description>Recent content on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 06 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>imgtest</title>
-      <link>/posts/whomp/</link>
+      <link>//localhost:1313/posts/whomp/</link>
       <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
       
-      <guid>/posts/whomp/</guid>
+      <guid>//localhost:1313/posts/whomp/</guid>
       <description>&lt;h1 id=&#34;test&#34;&gt;test&lt;/h1&gt;
-&lt;p&gt;!&lt;img alt=&#34;Image Description&#34; src=&#34;/images/whomp-1.png&#34;&gt;
-!&lt;img alt=&#34;Image Description&#34; src=&#34;/images/whomp.png&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;!&lt;img alt=&#34;Image Description&#34; src=&#34;//localhost:1313/images/whomp-1.png&#34;&gt;
+!&lt;img alt=&#34;Image Description&#34; src=&#34;//localhost:1313/images/whomp.png&#34;&gt;&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;test&#34;&gt;test&lt;/h1&gt;
-&lt;p&gt;!&lt;img alt=&#34;Image Description&#34; src=&#34;/images/whomp-1.png&#34;&gt;
-!&lt;img alt=&#34;Image Description&#34; src=&#34;/images/whomp.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;!&lt;img alt=&#34;Image Description&#34; src=&#34;//localhost:1313/images/whomp-1.png&#34;&gt;
+!&lt;img alt=&#34;Image Description&#34; src=&#34;//localhost:1313/images/whomp.png&#34;&gt;&lt;/p&gt;
 </content>
     </item>
     
     <item>
       <title></title>
-      <link>/posts/untitled/</link>
+      <link>//localhost:1313/posts/untitled/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/untitled/</guid>
+      <guid>//localhost:1313/posts/untitled/</guid>
       <description></description>
       <content></content>
     </item>
