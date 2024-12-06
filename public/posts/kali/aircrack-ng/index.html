@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>air crack :: Terminal</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="2024-06-05 18:22
+Status: Tags: [[kali]] [[cyber security]] [[CS]] [[linux]] [[hacking]] [[app]]
+LINKS https://www.aircrack-ng.org/doku.php?id=newbie_guide
+NOTES wpe and wpa analayzing and hash capturing tool mainly for [[web security]] dictionary attacks ?
+Aircrack-ng Newbie Guide for Linux Idea and initial work: ASPj
+Additions by: a number of good souls
+Last updated: Nov 21, 2018
+This tutorial will give you the basics to get started using the aircrack-ng suite. It is impossible to provide every piece of information you need and cover every scenario. So be prepared to do some homework and research on your own. The Forum and the Wiki have lots of supplementary tutorials and information.
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="//localhost:1313/posts/kali/aircrack-ng/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/buttons.min.2bc533403a27dfe0e93105a92502b42ce4587e2e4a87d9f7d349e51e16e09478.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/code.min.00125962708925857e7b66dbc58391d55be1191a3d0ce2034de8c9cd2c481c36.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/fonts.min.4881f0c525f3ce2a1864fb6e96676396cebe1e6fcef1933e8e1dde7041004fb5.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/footer.min.a8e92b931619ce449d1b06fd285035ef496e551f604eff0c4f4bacab9c748fc1.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/header.min.b6fb4423cf82a9f9d7abc9cd010223fa3d70a6526a3f28f8e17d814c06e18f9e.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/main.min.fe8dc560fccb53a458b0db19ccb7b265764ac46b68596b7e099c6793054dd457.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/menu.min.83637a90d903026bc280d3f82f96ceb06c5fc72b7c1a8d686afb5bbf818a29f7.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/pagination.min.82f6400eae7c7c6dc3c866733c2ec0579e4089608fea69400ff85b3880aa0d3c.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/post.min.fc74ca360273c1d828da3c02b8174eba435607b369d98418ccc6f2243cd4e75d.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/prism.min.9023bbc24533d09e97a51a0a42a5a7bfe4c591ae167c5551fb1d2191d11977c0.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/syntax.min.cc789ed9377260d7949ea4c18781fc58959a89287210fe4edbff44ebfc1511b6.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/terminal.min.7287c267859efe692ec9924b1b6aa8a44b05c0e739fc5be991d8075480b56903.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="//localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="air crack">
+<meta property="og:description" content="2024-06-05 18:22
+Status: Tags: [[kali]] [[cyber security]] [[CS]] [[linux]] [[hacking]] [[app]]
+LINKS https://www.aircrack-ng.org/doku.php?id=newbie_guide
+NOTES wpe and wpa analayzing and hash capturing tool mainly for [[web security]] dictionary attacks ?
+Aircrack-ng Newbie Guide for Linux Idea and initial work: ASPj
+Additions by: a number of good souls
+Last updated: Nov 21, 2018
+This tutorial will give you the basics to get started using the aircrack-ng suite. It is impossible to provide every piece of information you need and cover every scenario. So be prepared to do some homework and research on your own. The Forum and the Wiki have lots of supplementary tutorials and information.
+" />
+<meta property="og:url" content="//localhost:1313/posts/kali/aircrack-ng/" />
+<meta property="og:site_name" content="Terminal" />
+
+  <meta property="og:image" content="//localhost:1313/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2024-11-06 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container full">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Terminal
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/posts/aboutme">About</a></li>
+        
+      
+        
+          <li><a href="https://github.com/iblamekonradzuse">Github</a></li>
+        
+      
+        
+          <li><a href="/posts/projects">Projects</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/posts/aboutme" >About</a></li>
+        
+      
+        
+          <li><a href="https://github.com/iblamekonradzuse" >Github</a></li>
+        
+      
+        
+          <li><a href="/posts/projects" >Projects</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="//localhost:1313/posts/kali/aircrack-ng/">air crack</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2024-11-06&nbsp;[Updated:  2024-11-06]</time></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="//localhost:1313/tags/tag1/">tag1</a>&nbsp;
+      
+      #<a href="//localhost:1313/tags/tag2/">tag2</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>2024-06-05 18:22<br>
+Status:
+Tags: [[kali]] [[cyber security]] [[CS]] [[linux]] [[hacking]] [[app]]</p>
+<h1 id="links">LINKS<a href="#links" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p><a href="https://www.aircrack-ng.org/doku.php?id=newbie_guide">https://www.aircrack-ng.org/doku.php?id=newbie_guide</a></p>
+<h1 id="notes">NOTES<a href="#notes" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p>wpe and wpa analayzing and hash capturing tool
+mainly for [[web security]]
+dictionary attacks ?</p>
+<h1 id="aircrack-ng-newbie-guide-for-linux">Aircrack-ng Newbie Guide for Linux<a href="#aircrack-ng-newbie-guide-for-linux" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p>Idea and initial work: ASPj<br>
+Additions by: a number of good souls<br>
+Last updated: Nov 21, 2018</p>
+<p>This tutorial will give you the basics to get started using the aircrack-ng suite. It is impossible to provide every piece of information you need and cover every scenario. So be prepared to do some homework and research on your own. The <a href="https://forum.aircrack-ng.org/" title="https://forum.aircrack-ng.org/">Forum</a> and the <a href="https://www.aircrack-ng.org/doku.php?id=main" title="main">Wiki</a> have lots of supplementary tutorials and information.</p>
+<p>Although it does not cover all the steps from start to finish like this tutorial, the <a href="https://www.aircrack-ng.org/doku.php?id=simple_wep_crack" title="simple_wep_crack">Simple WEP Crack</a> tutorial covers the actual aircrack-ng steps in much more detail.</p>
+<h1 id="setting-up-hardware-installing-aircrack-ng">Setting up Hardware, Installing Aircrack-ng<a href="#setting-up-hardware-installing-aircrack-ng" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p>The first step in getting aircrack-ng working properly on your Linux system is patching and installing the proper driver for your wireless card. Many cards work with multiple drivers, some of which provide the necessary features for using aircrack-ng, and some of which do not.</p>
+<p>Needless to say, you need a wireless card which is compatible with the aircrack-ng suite. This is hardware which is fully compatible and can inject packets. A compatible wireless card can be used to crack a wireless access point in under an hour.</p>
+<p>To determine to which category your card belongs to, see <a href="https://www.aircrack-ng.org/doku.php?id=compatibility_drivers" title="compatibility_drivers">hardware compatibility page</a>. Read <a href="https://www.aircrack-ng.org/doku.php?id=compatible_cards" title="compatible_cards">Tutorial: Is My Wireless Card Compatible?</a> if you don&rsquo;t know where to look in this table. It still does not hurt to read this tutorial to build your knowledge and confirm your card attributes.</p>
+<p>First, you need to know which chipset is used in your wireless card and which driver you need for it. You will have determined this using the information in the previous paragraph. The <a href="https://www.aircrack-ng.org/doku.php?id=install_drivers" title="install_drivers">drivers section</a> will tell you which drivers you need.</p>
+<h2 id="aircrack-ng-installation">Aircrack-ng installation<a href="#aircrack-ng-installation" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Get the latest copy of aircrack-ng from the <a href="https://www.aircrack-ng.org/doku.php?id=main" title="main">homepage</a>, use our packages or use a penetration testing distribution such as Kali Linux or Pentoo where Aircrack-ng is already installed and up to date.</p>
+<p>To install aircrack-ng, refer to the documentation on the <a href="https://www.aircrack-ng.org/doku.php?id=install_aircrack" title="install_aircrack">installation page</a>.</p>
+<h1 id="ieee-80211-basics">IEEE 802.11 basics<a href="#ieee-80211-basics" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p>Ok, now everything is ready, time to make a pit stop before the action finally starts and learn something about how wireless networks work.</p>
+<p>The following chapter is very important, if something doesn&rsquo;t work as expected. Knowing what all is about helps you find the problem or helps you at least to describe it so someone else who can help you. This is a little bit scientific and maybe you feel like skipping it. However, a little knowledge is necessary to crack wireless networks and because it is a little more than just typing one command and letting aircrack do the rest.</p>
+<h2 id="how-a-wireless-network-is-found">How a wireless network is found<a href="#how-a-wireless-network-is-found" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>This is a short introduction into managed networks, these ones working with Access Points (AP). Every AP sends out about 10 so called beacon frames a second. These packets contain the following information:</p>
+<ul>
+<li>
+<p>Name of the network (ESSID)</p>
+</li>
+<li>
+<p>If encryption is used (and what encryption is used; pay attention, that may not be always true just because the AP advertises it)</p>
+</li>
+<li>
+<p>What MBit data rates are supported</p>
+</li>
+<li>
+<p>Which channel the network is on</p>
+</li>
+</ul>
+<p>This information is then shown in your tool that connects to this network. It is shown when you let your card scan for networks with <strong>iwlist <!-- raw HTML omitted --> scan</strong> and when you run <a href="https://www.aircrack-ng.org/doku.php?id=airodump-ng" title="airodump-ng">airodump-ng</a>.</p>
+<p>Every AP has a unique MAC address (48 bit, 6 pair of hexadecimal numbers). It looks like 00:01:23:4A:BC:DE. Every network hardware device has such an address and network devices communicate with each other by using this MAC address. So its basically like a unique name. MAC addresses are unique, no two network devices in the world have the same MAC address.</p>
+<h2 id="connecting-with-a-network">Connecting with a network<a href="#connecting-with-a-network" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>If you want to connect to a wireless network, there are some possibilities. In most cases, Open System Authentication is used. (Optional: If you want to learn more about authentication, check <a href="http://documentation.netgear.com/reference/fra/wireless/WirelessNetworkingBasics-3-06.html" title="http://documentation.netgear.com/reference/fra/wireless/WirelessNetworkingBasics-3-06.html">this</a> out.)</p>
+<p>Open System Authentication:</p>
+<ol>
+<li>
+<p>Ask the AP for authentication.</p>
+</li>
+<li>
+<p>The AP answers: OK, you are authenticated.</p>
+</li>
+<li>
+<p>Ask the AP for association</p>
+</li>
+<li>
+<p>The AP answers: OK, you are now connected.</p>
+</li>
+</ol>
+<p>This is the simplest case, BUT there could be some problems if you are not legitimate to connect:</p>
+<ul>
+<li>
+<p>WPA/WPA2 is in use, you need EAPOL authentication. The AP will deny you at step 2.</p>
+</li>
+<li>
+<p>Access Point has a list of allowed clients (MAC addresses), and it lets no one else connect. This is called MAC filtering.</p>
+</li>
+<li>
+<p>Access Point uses Shared Key Authentication, you need to supply the correct WEP key to be able to connect. (See the <a href="https://www.aircrack-ng.org/doku.php?id=shared_key" title="shared_key">How to do shared key fake authentication? tutorial</a> for advanced techniques.)</p>
+</li>
+</ul>
+<h1 id="simple-sniffing-and-cracking">Simple sniffing and cracking<a href="#simple-sniffing-and-cracking" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<h2 id="discovering-networks">Discovering Networks<a href="#discovering-networks" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>The first thing to do is looking out for a potential target. The aircrack-ng suite contains <a href="https://www.aircrack-ng.org/doku.php?id=airodump-ng" title="airodump-ng">airodump-ng</a> for this - but other programs like <a href="https://kismetwireless.net/" title="https://kismetwireless.net/">Kismet</a> can be used too.</p>
+<p>Prior to looking for networks, you must put your wireless card into what is called “monitor mode”. Monitor mode is a special mode that allows your computer to listen to every wireless packet. This monitor mode also allows you to optionally inject packets into a network. Injection will be covered later in this tutorial.</p>
+<p>To put your wireless card into monitor mode using <a href="https://www.aircrack-ng.org/doku.php?id=airmon-ng" title="airmon-ng">airmon-ng</a>:</p>
+<p>airmon-ng start wlan0</p>
+<p>It will create create another interface, and append “mon” to it. So, <strong>wlan0</strong> will become <strong>wlan0mon</strong>. To confirm it is in monitor mode, run “iwconfig” and confirm the mode.</p>
+<p>Then, start <a href="https://www.aircrack-ng.org/doku.php?id=airodump-ng" title="airodump-ng">airodump-ng</a> to look out for networks:</p>
+<p>airodump-ng wlan0mon</p>
+<p>If airodump-ng could connect to the WLAN device, you&rsquo;ll see a screen like this:</p>
+<p><a href="https://www.aircrack-ng.org/lib/exe/fetch.php?tok=1b417c&media=https%3A%2F%2Fwww.aircrack-ng.org%2Fimg%2Fnewbie_airodump.png" title="https://www.aircrack-ng.org/img/newbie_airodump.png"><img src="https://www.aircrack-ng.org/lib/exe/fetch.php?tok=1b417c&media=https%3A%2F%2Fwww.aircrack-ng.org%2Fimg%2Fnewbie_airodump.png"></a></p>
+<p><a href="https://www.aircrack-ng.org/doku.php?id=airodump-ng" title="airodump-ng">airodump-ng</a> hops from channel to channel and shows all access points it can receive beacons from. Channels 1 to 14 are used for 802.11b and g (in US, they only are allowed to use 1 to 11; 1 to 13 in Europe with some special cases; 1-14 in Japan). 802.11a is in the 5GHz and availability in different countries is more fragmented than on 2.4GHz. In general, known channels starts at 36 (32 in some countries) to 64 (68 in some countries) and 96 to 165. Wikipedia has more details on channel availability. The Linux <a href="https://wireless.wiki.kernel.org/en/developers/Regulatory/CRDA" title="https://wireless.wiki.kernel.org/en/developers/Regulatory/CRDA">Central Regulatory Domain Agent</a> takes care of allowing/forbidding transmissions on the different channels for your country; however, it needs to be set appropriately.</p>
+<p>The current channel is shown in the top left corner.</p>
+<p>After a short time some APs and (hopefully) some associated clients will show up.</p>
+<p>The upper data block shows the access points found:</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>BSSID</td>
+          <td>The MAC address of the AP</td>
+      </tr>
+      <tr>
+          <td>RXQ</td>
+          <td>Quality of the signal, when locked on a channel</td>
+      </tr>
+      <tr>
+          <td>PWR</td>
+          <td>Signal strength. Some drivers don&rsquo;t report it</td>
+      </tr>
+      <tr>
+          <td>Beacons</td>
+          <td>Number of beacon frames received. If you don&rsquo;t have a signal strength you can estimate it by the number of beacons: the more beacons, the better the signal quality</td>
+      </tr>
+      <tr>
+          <td>Data</td>
+          <td>Number of data frames received</td>
+      </tr>
+      <tr>
+          <td>CH</td>
+          <td>Channel the AP is operating on</td>
+      </tr>
+      <tr>
+          <td>MB</td>
+          <td>Speed or AP Mode. 11 is pure 802.11b, 54 pure 802.11g. Values between are a mixture</td>
+      </tr>
+      <tr>
+          <td>ENC</td>
+          <td>Encryption: OPN: no encryption, WEP: WEP encryption, WPA: WPA or WPA2 encryption, WEP?: WEP or WPA (don&rsquo;t know yet)</td>
+      </tr>
+      <tr>
+          <td>ESSID</td>
+          <td>The network name. Sometimes hidden</td>
+      </tr>
+  </tbody>
+</table>
+<p>The lower data block shows the clients found:</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>BSSID</td>
+          <td>The MAC of the AP this client is associated to</td>
+      </tr>
+      <tr>
+          <td>STATION</td>
+          <td>The MAC of the client itself</td>
+      </tr>
+      <tr>
+          <td>PWR</td>
+          <td>Signal strength. Some drivers don&rsquo;t report it</td>
+      </tr>
+      <tr>
+          <td>Packets</td>
+          <td>Number of data frames received</td>
+      </tr>
+      <tr>
+          <td>Probes</td>
+          <td>Network names (ESSIDs) this client has probed</td>
+      </tr>
+  </tbody>
+</table>
+<p>Now you should look out for a target network. It should have a client connected because cracking networks without a client is an advanced topic (See <a href="https://www.aircrack-ng.org/doku.php?id=how_to_crack_wep_with_no_clients" title="how_to_crack_wep_with_no_clients">How to crack WEP with no clients</a>). It should use WEP encryption and have a high signal strength. Maybe you can re-position your antenna to get a better signal. Often a few centimeters make a big difference in signal strength.</p>
+<p>In the example above the net 00:01:02:03:04:05 would be the only possible target because it&rsquo;s the only one with an associated client. But it also has a high signal strength so it&rsquo;s really a good target to practice.</p>
+<h2 id="sniffing-ivs">Sniffing IVs<a href="#sniffing-ivs" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Because of the channel hopping you won&rsquo;t capture all packets from your target net. So we want to listen just on one channel and additionally write all data to disk to be able to use it for cracking:</p>
+<p>airodump-ng -c 11 &ndash;bssid 00:01:02:03:04:05 -w dump wlan0mon</p>
+<p>With the -c parameter you tune to a channel and the parameter after -w is the prefix to the network dumps written to disk. The “&ndash;bssid” combined with the AP MAC address limits the capture to the one AP. The “&ndash;bssid” option is only available on new versions of airodump-ng.</p>
+<p>Before being able to crack WEP you&rsquo;ll usually need between 40 000 and 85 000 different Initialization Vectors (IVs). Every data packet contains an IV. IVs can be re-used, so the number of different IVs is usually a bit lower than the number of data packets captured.</p>
+<p>So you&rsquo;ll have to wait and capture 40K to 85K of data packets (IVs). If the network is not busy it will take a very long time. Often you can speed it up a lot by using an active attack (=packet replay). See the next chapter.</p>
+<h2 id="cracking">Cracking<a href="#cracking" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>If you&rsquo;ve got enough IVs captured in one or more file, you can try to crack the WEP key:</p>
+<p>aircrack-ng -b 00:01:02:03:04:05 dump-01.cap</p>
+<p>The MAC after the -b option is the BSSID of the target and dump-01.cap the file containing the captured packets. You can use multiple files, just add all their names or you can use a wildcard such as dump*.cap.</p>
+<p>For more information about <a href="https://www.aircrack-ng.org/doku.php?id=aircrack-ng" title="aircrack-ng">aircrack-ng</a> parameters, description of the output and usage see the <a href="https://www.aircrack-ng.org/doku.php?id=aircrack-ng" title="aircrack-ng">manual</a>.</p>
+<p>The number of IVs you need to crack a key is not fixed. This is because some IVs are weaker and leak more information about the key than others. Usually these weak IVs are randomly mixed in between the stronger ones. So if you are lucky, you can crack a key with only 20 000 IVs. But often this it not enough and aircrack-ng will run a long time (up to a week or even longer with a high fudge factor) and then tell you the key could not be cracked. If you have more IVs cracking can be done a lot faster and is usually done in a few minutes, or even seconds. Experience shows that 40 000 to 85 000 IVs is usually enough for cracking.</p>
+<p>There are some more advanced APs out there that use an algorithm to filter out weak IVs. The result is either that you can&rsquo;t get more than “n” different IVs from the AP or that you&rsquo;ll need millions (like 5 to 7 million) to crack the key. Search in the <a href="https://forum.aircrack-ng.org/" title="https://forum.aircrack-ng.org/">Forum</a>, there are some threads about cases like this and what to do.</p>
+<h1 id="active-attacks">Active attacks<a href="#active-attacks" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<h2 id="injection-support">Injection support<a href="#injection-support" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Most devices don&rsquo;t support injection - at least not without patched drivers. Some only support certain attacks. Take a look at the <a href="https://www.aircrack-ng.org/doku.php?id=compatibility_drivers" title="compatibility_drivers">compatibility page</a>, column aireplay. Sometimes this table is not up-to-date, so if you see a “NO” for your driver there don&rsquo;t give up yet, but look at the driver homepage, the driver mailing list or our <a href="https://forum.aircrack-ng.org/" title="https://forum.aircrack-ng.org/">Forum</a>. If you were able to successfully replay using a driver which is not listed as supported, don&rsquo;t hesitate to update the <a href="https://www.aircrack-ng.org/doku.php?id=compatibility_drivers" title="compatibility_drivers">compatibility page</a> table and add a link to a short howto. (To do this, request a wiki account on IRC.)</p>
+<p>The first step is to make sure packet injection really works with your card and driver. The easiest way to test it is the <a href="https://www.aircrack-ng.org/doku.php?id=injection_test" title="injection_test">injection test</a> attack. Make sure to perform this test prior to proceeding. Your card must be able to successfully inject in order to perform the following steps.</p>
+<p>You&rsquo;ll need the BSSID (AP MAC) and ESSID (network name) of an AP that does not do MAC filtering (e.g. your own) and must be in range of the AP.</p>
+<p>Try to connect to your AP using <a href="https://www.aircrack-ng.org/doku.php?id=aireplay-ng" title="aireplay-ng">aireplay-ng</a>:</p>
+<p>aireplay-ng &ndash;fakeauth 0 -e &ldquo;your network ESSID&rdquo; -a 00:01:02:03:04:05 wlan0mon</p>
+<p>The value after -a is the BSSID of your AP.</p>
+<p>If injection works you should see something like this:</p>
+<p>12:14:06  Sending Authentication Request
+12:14:06  Authentication successful
+12:14:06  Sending Association Request
+12:14:07  Association successful :-)</p>
+<p>If not</p>
+<ol>
+<li>
+<p>double-check ESSID and BSSID</p>
+</li>
+<li>
+<p>make sure your AP has MAC filtering disabled</p>
+</li>
+<li>
+<p>test it against another AP</p>
+</li>
+<li>
+<p>make sure your driver is properly patched and supported</p>
+</li>
+<li>
+<p>Instead of “0”, try “6000 -o 1 -q 10”</p>
+</li>
+</ol>
+<h2 id="arp-replay">ARP replay<a href="#arp-replay" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Now that we know that packet injection works, we can do something to massively speed up capturing IVs: <a href="https://www.aircrack-ng.org/doku.php?id=arp-request_reinjection" title="arp-request_reinjection">ARP-request reinjection</a></p>
+<h3 id="the-idea">The idea<a href="#the-idea" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p><a href="https://en.wikipedia.org/wiki/Address_Resolution_Protocol" title="https://en.wikipedia.org/wiki/Address_Resolution_Protocol">ARP</a> works (simplified) by broadcasting a query for an IP and the device that has this IP sends back an answer. Because WEP does not protect against replay, you can sniff a packet, send it out again and again and it is still valid. So you just have to capture and replay an ARP-request targeted at the AP to create lots of traffic (and sniff IVs).</p>
+<h3 id="the-lazy-way">The lazy way<a href="#the-lazy-way" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>First open a window with an <a href="https://www.aircrack-ng.org/doku.php?id=airodump-ng" title="airodump-ng">airodump-ng</a> sniffing for traffic (see above). <a href="https://www.aircrack-ng.org/doku.php?id=aireplay-ng" title="aireplay-ng">aireplay-ng</a> and <a href="https://www.aircrack-ng.org/doku.php?id=airodump-ng" title="airodump-ng">airodump-ng</a> can run together. Wait for a client to show up on the target network. Then start the attack:</p>
+<p>aireplay-ng &ndash;arpreplay -b 00:01:02:03:04:05 -h 00:04:05:06:07:08 wlan0mon</p>
+<p>-b specifies the target BSSID, -h the MAC of the connected client.</p>
+<p>Now you have to wait for an ARP packet to arrive. Usually you&rsquo;ll have to wait for a few minutes (or look at the next chapter).</p>
+<p>If you were successful, you&rsquo;ll see something like this:</p>
+<p>Saving ARP requests in replay_arp-0627-121526.cap
+You must also start airodump to capture replies.
+Read 2493 packets (got 1 ARP requests), sent 1305 packets&hellip;</p>
+<p>If you have to stop replaying, you don&rsquo;t have to wait for the next ARP packet to show up, but you can re-use the previously captured packet(s) with the -r <!-- raw HTML omitted --> option.</p>
+<p>When using the ARP injection technique, you can use the PTW method to crack the WEP key. This dramatically reduces the number of data packets you need and also the time needed. You must capture the full packet in airodump-ng, meaning do not use the “&ndash;ivs” option when starting it. For <a href="https://www.aircrack-ng.org/doku.php?id=aircrack-ng" title="aircrack-ng">aircrack-ng</a>, use “aircrack -z <!-- raw HTML omitted -->”. (PTW is the default attack)</p>
+<p>If the number of data packets received by airodump-ng sometimes stops increasing you maybe have to reduce the replay-rate. You do this with the -x <!-- raw HTML omitted --> option. I usually start out with 50 and reduce until packets are received continuously again. Better positioning of your antenna usually also helps.</p>
+<h3 id="the-aggressive-way">The aggressive way<a href="#the-aggressive-way" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Most operating systems clear the ARP cache on disconnection. If they want to send the next packet after reconnection (or just use DHCP), they have to send out ARP requests. So the idea is to disconnect a client and force it to reconnect to capture an ARP-request. A side-effect is that you can sniff the ESSID and possibly a keystream during reconnection too. This comes in handy if the ESSID of your target is hidden, or if it uses shared-key authentication.</p>
+<p>Keep your airodump-ng and aireplay-ng running. Open another window and run a <a href="https://www.aircrack-ng.org/doku.php?id=deauthentication" title="deauthentication">deauthentication</a> attack:</p>
+<p>aireplay-ng &ndash;deauth 5 -a 00:01:02:03:04:05 -c 00:04:05:06:07:08 wlan0mon</p>
+<p>-a is the BSSID of the AP, -c the MAC of the targeted client.</p>
+<p>Wait a few seconds and your ARP replay should start running.</p>
+<p>Most clients try to reconnect automatically. But the risk that someone recognizes this attack or at least attention is drawn to the stuff happening on the WLAN is higher than with other attacks.</p>
+<h1 id="further-tools-and-information">Further tools and information<a href="#further-tools-and-information" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p>More tutorials can be found on <a href="https://www.aircrack-ng.org/doku.php?id=tutorial" title="tutorial">this page</a>.</p>
+<h1 id="to-do">TO DO<a href="#to-do" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="//localhost:1313/posts/projects/" class="button inline prev">
+        projects
+      </a>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2024 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
