@@ -4,8 +4,8 @@ import shutil
 
 # Paths
 posts_dir = "/Users/wervand/Desktop/des/dev/blog/content/posts/"
-attachments_dir = "/Users/wervand/Desktop/des/obsi/100- IMG"
-static_images_dir = "/Users/werand/Desktop/des/dev/blog/static/images/"
+attachments_dir = "/Users/wervand/Desktop/des/obsi/5-Blog /"
+static_images_dir = "/Users/wervand/Desktop/des/dev/blog/static/images/"
 
 # Step 1: Process each markdown file in the posts directory
 for filename in os.listdir(posts_dir):

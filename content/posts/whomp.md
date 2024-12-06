@@ -10,7 +10,7 @@ tags:
 
 # test
 
-![[whomp.png]]
+!![Image Description](/images/whomp.png)
 
 
 
