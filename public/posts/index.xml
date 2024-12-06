@@ -14,9 +14,11 @@
       
       <guid>/posts/whomp/</guid>
       <description>&lt;h1 id=&#34;test&#34;&gt;test&lt;/h1&gt;
-&lt;p&gt;!&lt;img alt=&#34;Image Description&#34; src=&#34;/images/whomp.png&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;!&lt;img alt=&#34;Image Description&#34; src=&#34;/images/whomp-1.png&#34;&gt;
+!&lt;img alt=&#34;Image Description&#34; src=&#34;/images/whomp.png&#34;&gt;&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;test&#34;&gt;test&lt;/h1&gt;
-&lt;p&gt;!&lt;img alt=&#34;Image Description&#34; src=&#34;/images/whomp.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;!&lt;img alt=&#34;Image Description&#34; src=&#34;/images/whomp-1.png&#34;&gt;
+!&lt;img alt=&#34;Image Description&#34; src=&#34;/images/whomp.png&#34;&gt;&lt;/p&gt;
 </content>
     </item>
     
