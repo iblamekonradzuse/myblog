@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title> :: Terminal</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="2024-06-05 18:27
+Status: Tags: [[web security]] [[kali]] [[cyber security]] [[linux]] [[hacking]] [[CS]]
+LINKS NOTES utulized as proxy
+Burp Suite is a comprehensive platform for web application security testing. Developed by PortSwigger, it provides tools for performing security testing of web applications. It is widely used by security professionals, developers, and testers to identify and exploit vulnerabilities in web applications.
+Key Features of Burp Suite: Proxy:
+Acts as an intercepting proxy to capture and inspect HTTP/S traffic between the browser and the web server. Allows for modification of requests and responses on the fly. Spider:
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="/posts/burp-suite/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="/css/buttons.min.2bc533403a27dfe0e93105a92502b42ce4587e2e4a87d9f7d349e51e16e09478.css">
+
+  
+  <link rel="stylesheet" href="/css/code.min.00125962708925857e7b66dbc58391d55be1191a3d0ce2034de8c9cd2c481c36.css">
+
+  
+  <link rel="stylesheet" href="/css/fonts.min.4881f0c525f3ce2a1864fb6e96676396cebe1e6fcef1933e8e1dde7041004fb5.css">
+
+  
+  <link rel="stylesheet" href="/css/footer.min.a8e92b931619ce449d1b06fd285035ef496e551f604eff0c4f4bacab9c748fc1.css">
+
+  
+  <link rel="stylesheet" href="/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="/css/header.min.b6fb4423cf82a9f9d7abc9cd010223fa3d70a6526a3f28f8e17d814c06e18f9e.css">
+
+  
+  <link rel="stylesheet" href="/css/main.min.fe8dc560fccb53a458b0db19ccb7b265764ac46b68596b7e099c6793054dd457.css">
+
+  
+  <link rel="stylesheet" href="/css/menu.min.83637a90d903026bc280d3f82f96ceb06c5fc72b7c1a8d686afb5bbf818a29f7.css">
+
+  
+  <link rel="stylesheet" href="/css/pagination.min.82f6400eae7c7c6dc3c866733c2ec0579e4089608fea69400ff85b3880aa0d3c.css">
+
+  
+  <link rel="stylesheet" href="/css/post.min.fc74ca360273c1d828da3c02b8174eba435607b369d98418ccc6f2243cd4e75d.css">
+
+  
+  <link rel="stylesheet" href="/css/prism.min.9023bbc24533d09e97a51a0a42a5a7bfe4c591ae167c5551fb1d2191d11977c0.css">
+
+  
+  <link rel="stylesheet" href="/css/syntax.min.cc789ed9377260d7949ea4c18781fc58959a89287210fe4edbff44ebfc1511b6.css">
+
+  
+  <link rel="stylesheet" href="/css/terminal.min.7287c267859efe692ec9924b1b6aa8a44b05c0e739fc5be991d8075480b56903.css">
+
+  
+  <link rel="stylesheet" href="/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="">
+<meta property="og:description" content="2024-06-05 18:27
+Status: Tags: [[web security]] [[kali]] [[cyber security]] [[linux]] [[hacking]] [[CS]]
+LINKS NOTES utulized as proxy
+Burp Suite is a comprehensive platform for web application security testing. Developed by PortSwigger, it provides tools for performing security testing of web applications. It is widely used by security professionals, developers, and testers to identify and exploit vulnerabilities in web applications.
+Key Features of Burp Suite: Proxy:
+Acts as an intercepting proxy to capture and inspect HTTP/S traffic between the browser and the web server. Allows for modification of requests and responses on the fly. Spider:
+" />
+<meta property="og:url" content="/posts/burp-suite/" />
+<meta property="og:site_name" content="Terminal" />
+
+  <meta property="og:image" content="/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container full">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Terminal
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/posts/aboutme">About</a></li>
+        
+      
+        
+          <li><a href="https://github.com/iblamekonradzuse">Github</a></li>
+        
+      
+        
+          <li><a href="/posts/projects">Projects</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/posts/aboutme" >About</a></li>
+        
+      
+        
+          <li><a href="https://github.com/iblamekonradzuse" >Github</a></li>
+        
+      
+        
+          <li><a href="/posts/projects" >Projects</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="/posts/burp-suite/"></a>
+  </h1>
+  <div class="post-meta"></div>
+
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>2024-06-05 18:27<br>
+Status:
+Tags: [[web security]] [[kali]] [[cyber security]] [[linux]] [[hacking]] [[CS]]</p>
+<h1 id="links">LINKS<a href="#links" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<h1 id="notes">NOTES<a href="#notes" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p>utulized as proxy</p>
+<p>Burp Suite is a comprehensive platform for web application security testing. Developed by PortSwigger, it provides tools for performing security testing of web applications. It is widely used by security professionals, developers, and testers to identify and exploit vulnerabilities in web applications.</p>
+<h3 id="key-features-of-burp-suite">Key Features of Burp Suite:<a href="#key-features-of-burp-suite" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<ol>
+<li>
+<p><strong>Proxy</strong>:</p>
+<ul>
+<li>Acts as an intercepting proxy to capture and inspect HTTP/S traffic between the browser and the web server.</li>
+<li>Allows for modification of requests and responses on the fly.</li>
+</ul>
+</li>
+<li>
+<p><strong>Spider</strong>:</p>
+<ul>
+<li>Automatically crawls the web application to map out its structure and discover content and functionality.</li>
+</ul>
+</li>
+<li>
+<p><strong>Scanner</strong>:</p>
+<ul>
+<li>Identifies vulnerabilities such as SQL injection, cross-site scripting (XSS), and other common web application flaws.</li>
+<li>Available in the Professional edition with automated scanning capabilities.</li>
+</ul>
+</li>
+<li>
+<p><strong>Intruder</strong>:</p>
+<ul>
+<li>Automates customized attacks against web applications, such as brute force attacks, fuzzing, and parameter manipulation.</li>
+<li>Useful for testing the strength of passwords and the application&rsquo;s handling of unexpected input.</li>
+</ul>
+</li>
+<li>
+<p><strong>Repeater</strong>:</p>
+<ul>
+<li>Allows for manual modification and re-sending of individual HTTP requests to test how the application responds to different inputs.</li>
+</ul>
+</li>
+<li>
+<p><strong>Sequencer</strong>:</p>
+<ul>
+<li>Analyzes the randomness of tokens, such as session cookies, to identify weaknesses in session management.</li>
+</ul>
+</li>
+<li>
+<p><strong>Decoder</strong>:</p>
+<ul>
+<li>Decodes and encodes data in various formats, such as URL encoding, Base64, and HTML encoding.</li>
+</ul>
+</li>
+<li>
+<p><strong>Comparer</strong>:</p>
+<ul>
+<li>Compares two sets of data to identify differences, useful for identifying changes in application behavior.</li>
+</ul>
+</li>
+<li>
+<p><strong>Extender</strong>:</p>
+<ul>
+<li>Allows for the extension of Burp Suite&rsquo;s functionality through the use of plugins and the Burp Extender API.</li>
+<li>Supports community-developed extensions to enhance Burp Suite&rsquo;s capabilities.</li>
+</ul>
+</li>
+</ol>
+<h3 id="editions-of-burp-suite">Editions of Burp Suite:<a href="#editions-of-burp-suite" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<ol>
+<li>
+<p><strong>Community Edition</strong>:</p>
+<ul>
+<li>Free version with limited features.</li>
+<li>Suitable for basic manual testing and learning purposes.</li>
+</ul>
+</li>
+<li>
+<p><strong>Professional Edition</strong>:</p>
+<ul>
+<li>Paid version with full functionality.</li>
+<li>Includes advanced scanning, automated testing, and additional tools and features.</li>
+</ul>
+</li>
+<li>
+<p><strong>Enterprise Edition</strong>:</p>
+<ul>
+<li>Designed for automated, scalable security testing in CI/CD environments.</li>
+<li>Provides continuous scanning and integration with development pipelines.</li>
+</ul>
+</li>
+</ol>
+<h3 id="use-cases-for-burp-suite">Use Cases for Burp Suite:<a href="#use-cases-for-burp-suite" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<ul>
+<li><strong>Penetration Testing</strong>: Security professionals use Burp Suite to perform thorough security assessments of web applications.</li>
+<li><strong>Bug Bounty Hunting</strong>: Researchers and ethical hackers use Burp Suite to find and report vulnerabilities in web applications.</li>
+<li><strong>Development and QA</strong>: Developers and QA engineers use Burp Suite to identify and fix security issues during the development lifecycle.</li>
+</ul>
+<p>Burp Suite is a powerful tool for web application security testing, offering a range of features that cater to both manual and automated testing needs.</p>
+<h1 id="tutorial">Tutorial<a href="#tutorial" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p><a href="https://portswigger.net/burp/documentation/desktop/getting-started">https://portswigger.net/burp/documentation/desktop/getting-started</a></p>
+<h2 id="ntercepting-a-request">ntercepting a request<a href="#ntercepting-a-request" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Burp Proxy lets you intercept HTTP requests and responses sent between Burp&rsquo;s browser and the target server. This enables you to study how the website behaves when you perform different actions.</p>
+<h3 id="step-1-launch-burps-browser">Step 1: Launch Burp&rsquo;s browser<a href="#step-1-launch-burps-browser" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Go to the <strong>Proxy &gt; Intercept</strong> tab.</p>
+<p>Click the <strong>Intercept is off</strong> button, so it toggles to <strong>Intercept is on.</strong></p>
+<p><img alt="Intercept is on" src="https://portswigger.net/burp/documentation/desktop/images/getting-started/quick-start-pro-intercept-on.png"></p>
+<p>Click <strong>Open Browser</strong>. This launches Burp&rsquo;s browser, which is preconfigured to work with Burp right out of the box.</p>
+<p>Position the windows so that you can see both Burp and Burp&rsquo;s browser.</p>
+<p><img alt="Opening Burp&rsquo;s browser" src="https://portswigger.net/burp/documentation/desktop/images/getting-started/quick-start-pro-browser.png"></p>
+<h3 id="step-2-intercept-a-request">Step 2: Intercept a request<a href="#step-2-intercept-a-request" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Using Burp&rsquo;s browser, try to visit <code>https://portswigger.net</code> and observe that the site doesn&rsquo;t load. Burp Proxy has intercepted the HTTP request that was issued by the browser before it could reach the server. You can see this intercepted request on the <strong>Proxy &gt; Intercept</strong> tab.</p>
+<p><img alt="Viewing an intercepted request in Burp Proxy" src="https://portswigger.net/burp/documentation/desktop/images/getting-started/quick-start-pro-intercepted-request.png"></p>
+<p>The request is held here so that you can study it, and even modify it, before forwarding it to the target server.</p>
+<h3 id="step-3-forward-the-request">Step 3: Forward the request<a href="#step-3-forward-the-request" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Click the <strong>Forward</strong> button several times to send the intercepted request, and any subsequent ones, until the page loads in Burp&rsquo;s browser.</p>
+<h3 id="step-4-switch-off-interception">Step 4: Switch off interception<a href="#step-4-switch-off-interception" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Due to the number of requests browsers typically send, you often won&rsquo;t want to intercept every single one of them. Click the <strong>Intercept is on</strong> button so that it now says <strong>Intercept is off</strong>.</p>
+<p><img alt="Proxy Intercept is off" src="https://portswigger.net/burp/documentation/desktop/images/getting-started/quick-start-pro-intercept-off.png"></p>
+<p>Go back to the browser and confirm that you can now interact with the site as normal.</p>
+<h3 id="step-5-view-the-http-history">Step 5: View the HTTP history<a href="#step-5-view-the-http-history" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>In Burp, go to the <strong>Proxy &gt; HTTP history</strong> tab. Here, you can see the history of all HTTP traffic that has passed through Burp Proxy, even while interception was switched off.</p>
+<p>Click on any entry in the history to view the raw HTTP request, along with the corresponding response from the server.</p>
+<p><img alt="Viewing the HTTP history in Burp Proxy" src="https://portswigger.net/burp/documentation/desktop/images/getting-started/quick-start-pro-proxy-history.png"></p>
+<p>This lets you explore the website as normal and study the interactions between Burp&rsquo;s browser and the server afterward, which is more convenient in many cases.</p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="/posts/whomp/" class="button inline prev">
+        imgtest
+      </a>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2024 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
